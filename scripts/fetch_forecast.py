@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """
 l__ai__rd Swell Forecast Pipeline
@@ -166,4 +165,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
