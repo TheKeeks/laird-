@@ -1,4 +1,4 @@
-```yaml
+yaml
 name: Update Swell Forecast
 
 on:
@@ -36,4 +36,3 @@ jobs:
           git add data/forecast.json
           git diff --cached --quiet || git commit -m "Update forecast $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
-```
