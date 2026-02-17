@@ -230,69 +230,46 @@ body {
 
 <!-- ═══════════════════════════════════════════════════════
      SECTION 5 — SWELL FORECAST TIMELINE + TABLE
-     Requires GFS-Wave pipeline (server-side GRIB2)
+     Reads data/forecast.json from GitHub Actions pipeline
      ═══════════════════════════════════════════════════════ -->
 <div class="card">
-  <div class="section-lbl">10-Day Swell Forecast</div>
-  <div class="pipe">
-    <strong>⚙ GFS-Wave Pipeline Required</strong><br><br>
-    The swell forecast timeline and hourly table require server-side processing of NOAA GFS-Wave GRIB2 files,
-    which cannot be done in a browser. This is the same data source HopeWaves uses for its forecast.<br><br>
-    <strong>What this section will show once the pipeline is running:</strong>
-    <ol class="step">
-      <li>A <strong>horizontal timeline chart</strong> showing swell height over 10 days as a line graph with area fill color-coded by swell window
-        (<span style="color:var(--green)">■</span> green = in 115°–158° window,
-         <span style="color:var(--orange)">■</span> orange = ±5° marginal,
-         <span style="color:var(--gray-c)">■</span> gray = outside)</li>
-      <li>Wind arrows every 3 hours above the timeline, color-coded by speed</li>
-      <li>A <strong>"Worth a Check"</strong> row with ✓ marks where swell is green AND wind is light/offshore</li>
-      <li>Low tide diamond markers with time labels (e.g., "low @ 6:45 AM")</li>
-      <li>Nighttime shading between last light and first light</li>
-      <li>An <strong>hourly forecast table</strong> below the chart with: Time, Height, Period, Direction (color-coded), Wind, and an expandable 2nd Swell column</li>
-    </ol>
-    <br>
-    <strong>To set up the pipeline:</strong>
-    <ol class="step">
-      <li>Create <code>scripts/fetch_forecast.py</code> — downloads GFS-Wave GRIB2 from NOMADS, extracts point data at 41.003°N, 71.600°W</li>
-      <li>Create <code>.github/workflows/update-forecast.yml</code> — runs every 6 hours (<code>cron: '30 3,9,15,21 * * *'</code>)</li>
-      <li>Pipeline writes <code>data/forecast.json</code> with hourly height, period, direction, and secondary swell components</li>
-      <li>This page reads <code>data/forecast.json</code> and renders the timeline + table</li>
-    </ol>
-    <br>
-    See the <strong>l__ai__rd Agent Spec</strong> for the complete pipeline code, NOMADS URL pattern, and xarray/cfgrib extraction script.
+  <div class="section-lbl">Swell Forecast Timeline</div>
+  <div id="timeline-wrap" style="overflow-x:auto;margin-top:4px">
+    <canvas id="timeline-cv" style="display:block;min-width:700px;height:210px;width:100%"></canvas>
   </div>
-  <div class="wkey" style="margin-top:10px">
-    Swell window color key:
-    <span class="k" style="background:var(--green)"></span> 115°–158° in window
+  <div class="wkey" style="margin-top:6px">
+    <span class="k" style="background:var(--green)"></span> in window (115°–158°)
     <span class="k" style="background:var(--orange)"></span> ±5° marginal
     <span class="k" style="background:var(--gray-c)"></span> outside
-    · Direction colors apply to primary swell height text in the table
+    · ✓ = worth a check (good swell + light wind)
+    · ◆ = low tide
+  </div>
+  <div class="src" id="tl-src">GFS-Wave @ 41.003°N, 71.600°W</div>
+</div>
+
+<div class="card">
+  <div class="section-lbl">10-Day Swell Forecast — Hourly</div>
+  <div id="fc-table-wrap" style="max-height:70vh;overflow-y:auto;border:1px solid var(--border);border-radius:6px;margin-top:4px">
+    <div id="fc-table-out" class="loading" style="padding:16px">Loading forecast data…</div>
+  </div>
+  <div class="wkey" style="margin-top:6px">
+    Height color = swell direction window.
+    <span class="k" style="background:var(--green)"></span> in window
+    <span class="k" style="background:var(--orange)"></span> marginal
+    <span class="k" style="background:var(--gray-c)"></span> outside
   </div>
   <div class="src">GFS-Wave atlocn.0p16 @ 41.003°N, 71.600°W · Wind: NWS API @ Chocomount</div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
-     SECTION 6 — TIDAL CURRENTS (DeepZoom)
+     SECTION 6 — TIDAL CURRENTS (DeepZoom — live embed)
      ═══════════════════════════════════════════════════════ -->
 <div class="card">
   <div class="section-lbl">Tidal Currents</div>
-  <div class="embed-ph">
-    <div>
-      <strong style="color:var(--ink)">DeepZoom — Manual Setup Required</strong><br><br>
-      DeepZoom does not offer a public API for programmatic trip creation.<br>
-      Each trip ID must be created manually through their website.<br><br>
-      <strong>Setup (one-time, takes ~2 minutes):</strong><br>
-      1. Open <a href="https://www.deepzoom.com" target="_blank">deepzoom.com</a><br>
-      2. Navigate to Fishers Island area (41.17°N, 71.82°W)<br>
-      3. Enable current arrows (yellow layer)<br>
-      4. Save as a trip — copy the trip ID from the URL<br>
-      5. In <code>index.html</code>, replace the placeholder below:<br><br>
-      <code style="font-size:10px;background:#ece8e2;padding:4px 8px;border-radius:4px;display:inline-block">
-        src="https://www.deepzoom.com/trip/<strong>YOUR_TRIP_ID</strong>"
-      </code>
-    </div>
-  </div>
-  <div class="src">DeepZoom.com · Fishers Is. / Block Is. / Montauk / The Race</div>
+  <iframe id="deepzoom-frame" title="DeepZoom Tidal Currents" width="100%" style="min-width:340px;height:70vh;max-height:600px;border:none;border-radius:6px"
+    src="https://www.deepzoom.com/trip/scfgz3h6">
+  </iframe>
+  <div class="src">DeepZoom.com · Trip ID: scfgz3h6 · Fishers Is. / Block Is. / Montauk / The Race</div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -992,6 +969,249 @@ function renderWind(periods) {
 }
 
 /* ──────────────────────────────
+   FORECAST TIMELINE + TABLE
+   Reads data/forecast.json from GitHub Actions pipeline
+   ────────────────────────────── */
+async function fetchForecast() {
+  try {
+    const r = await fetch('data/forecast.json');
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return await r.json();
+  } catch(e) {
+    console.warn('Forecast fetch failed:', e);
+    return null;
+  }
+}
+
+function renderTimeline(fc, windPeriods, tideHilos, sun) {
+  const canvas = document.getElementById('timeline-cv');
+  if (!fc || !fc.forecasts || !fc.forecasts.length) {
+    canvas.style.display = 'none';
+    document.getElementById('tl-src').textContent = 'Forecast data not yet available — run the GitHub Actions pipeline';
+    return;
+  }
+
+  const pts = fc.forecasts;
+  const wrap = document.getElementById('timeline-wrap');
+  const totalW = Math.max(700, wrap.getBoundingClientRect().width);
+  const H = 210;
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = totalW * dpr; canvas.height = H * dpr;
+  canvas.style.width = totalW + 'px'; canvas.style.height = H + 'px';
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const pad = { t: 42, b: 28, l: 10, r: 10 };
+  const pW = totalW - pad.l - pad.r, pH = H - pad.t - pad.b;
+
+  const times = pts.map(p => new Date(p.valid_time).getTime());
+  const tMin = times[0], tMax = times[times.length - 1];
+  const heights = pts.map(p => p.height_ft || 0);
+  const maxH = Math.max(...heights, 1);
+  const xS = t => pad.l + ((t - tMin) / (tMax - tMin)) * pW;
+  const yS = h => pad.t + pH - (h / (maxH * 1.15)) * pH;
+
+  // Nighttime shading
+  if (sun) {
+    ctx.fillStyle = 'rgba(0,0,0,0.03)';
+    for (let day = 0; day < 11; day++) {
+      const ds = new Date(tMin); ds.setDate(ds.getDate() + day); ds.setHours(0,0,0,0);
+      const fl = ds.getTime() + sun.flMin * 60000;
+      const ll = ds.getTime() + sun.llMin * 60000;
+      const de = ds.getTime() + 24 * 3600000;
+      if (fl <= tMax && ds.getTime() >= tMin) {
+        ctx.fillRect(Math.max(xS(ds.getTime()), pad.l), pad.t,
+          xS(Math.min(fl, tMax)) - Math.max(xS(ds.getTime()), pad.l), pH);
+      }
+      if (ll >= tMin && ll <= tMax) {
+        ctx.fillRect(xS(ll), pad.t,
+          Math.min(xS(Math.min(de, tMax)), pad.l + pW) - xS(ll), pH);
+      }
+    }
+  }
+
+  // Draw swell area fill, color-coded by direction per segment
+  for (let i = 0; i < pts.length - 1; i++) {
+    const x0 = xS(times[i]), x1 = xS(times[i + 1]);
+    const y0 = yS(heights[i]), y1 = yS(heights[i + 1]);
+    const dir = pts[i].direction_deg;
+    let fillCol = 'rgba(160,152,144,0.15)'; // gray
+    if (dir !== null && dir >= C.winE && dir <= C.winW) fillCol = 'rgba(58,125,86,0.18)';
+    else if (dir !== null && ((dir >= C.winE - C.buf && dir < C.winE) || (dir > C.winW && dir <= C.winW + C.buf)))
+      fillCol = 'rgba(184,122,46,0.15)';
+
+    ctx.beginPath();
+    ctx.moveTo(x0, y0); ctx.lineTo(x1, y1);
+    ctx.lineTo(x1, pad.t + pH); ctx.lineTo(x0, pad.t + pH);
+    ctx.closePath();
+    ctx.fillStyle = fillCol; ctx.fill();
+  }
+
+  // Swell line
+  ctx.beginPath();
+  pts.forEach((p, i) => {
+    const x = xS(times[i]), y = yS(heights[i]);
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.strokeStyle = '#5a7fa0'; ctx.lineWidth = 1.5; ctx.stroke();
+
+  // Low tide diamonds
+  if (tideHilos && tideHilos.length) {
+    tideHilos.forEach(hl => {
+      if (hl.type !== 'L') return;
+      const t = new Date(hl.t.replace(' ', 'T')).getTime();
+      if (t < tMin || t > tMax) return;
+      const x = xS(t), y = pad.t + pH + 2;
+      ctx.fillStyle = '#5a7fa0';
+      ctx.beginPath();
+      ctx.moveTo(x, y - 4); ctx.lineTo(x + 4, y); ctx.lineTo(x, y + 4); ctx.lineTo(x - 4, y);
+      ctx.closePath(); ctx.fill();
+      ctx.font = '7px "DM Mono", monospace'; ctx.fillStyle = '#5c554d';
+      ctx.textAlign = 'center';
+      ctx.fillText('low ' + fmtT(new Date(t)), x, y + 13);
+    });
+  }
+
+  // Wind arrows every 3 hours
+  if (windPeriods && windPeriods.length) {
+    const dirMap = {N:180,NNE:202,NE:225,ENE:247,E:270,ESE:292,SE:315,SSE:337,S:0,SSW:22,SW:45,WSW:67,W:90,WNW:112,NW:135,NNW:157};
+    windPeriods.filter((_, i) => i % 3 === 0).forEach(wp => {
+      const t = new Date(wp.startTime).getTime();
+      if (t < tMin || t > tMax) return;
+      const x = xS(t);
+      const spd = parseInt(wp.windSpeed) || 0;
+      let col = '#2c2825';
+      if (spd >= 20) col = '#a85a4a';
+      else if (spd >= 15) col = '#b87a2e';
+      else if (spd <= 7) col = '#3a7d56';
+      const deg = dirMap[wp.windDirection] || 0;
+      ctx.save();
+      ctx.translate(x, pad.t - 16);
+      ctx.rotate(deg * Math.PI / 180);
+      ctx.font = '10px sans-serif'; ctx.fillStyle = col; ctx.textAlign = 'center';
+      ctx.fillText('↓', 0, 0);
+      ctx.restore();
+      ctx.font = '7px "DM Mono", monospace'; ctx.fillStyle = col; ctx.textAlign = 'center';
+      ctx.fillText(spd + '', x, pad.t - 4);
+    });
+  }
+
+  // "Worth a check" row — ✓ where swell green AND wind <= 10
+  ctx.font = '9px "DM Mono", monospace';
+  // Sample every 3 hours
+  for (let i = 0; i < pts.length; i += 3) {
+    const t = times[i];
+    const dir = pts[i].direction_deg;
+    const ht = heights[i];
+    const inWindow = dir !== null && dir >= C.winE && dir <= C.winW && ht >= 1;
+    // Find matching wind period
+    let lightWind = true;
+    if (windPeriods) {
+      const closest = windPeriods.reduce((best, wp) => {
+        const diff = Math.abs(new Date(wp.startTime).getTime() - t);
+        return diff < best.diff ? { diff, wp } : best;
+      }, { diff: Infinity, wp: null });
+      if (closest.wp) {
+        const spd = parseInt(closest.wp.windSpeed) || 0;
+        lightWind = spd <= 10;
+      }
+    }
+    if (inWindow && lightWind) {
+      const x = xS(t);
+      ctx.fillStyle = '#3a7d56'; ctx.textAlign = 'center';
+      ctx.fillText('✓', x, pad.t - 26);
+    }
+  }
+
+  // Day labels on x-axis
+  ctx.font = '8.5px "DM Mono", monospace'; ctx.fillStyle = '#8a827a'; ctx.textAlign = 'center';
+  const drawnDays = new Set();
+  pts.forEach(p => {
+    const d = new Date(p.valid_time);
+    const key = d.toDateString();
+    if (!drawnDays.has(key) && d.getHours() === 12) {
+      drawnDays.add(key);
+      ctx.fillText(DAYS[d.getDay()] + ' ' + (d.getMonth()+1) + '/' + d.getDate(), xS(d.getTime()), H - 4);
+    }
+  });
+
+  // Y-axis height labels
+  ctx.font = '8px "DM Mono", monospace'; ctx.fillStyle = '#b5afa8'; ctx.textAlign = 'left';
+  for (let h = 0; h <= maxH; h += Math.ceil(maxH / 4)) {
+    ctx.fillText(h + "'", pad.l + 2, yS(h) - 2);
+  }
+
+  document.getElementById('tl-src').textContent = 'GFS-Wave @ 41.003°N, 71.600°W · Model cycle: ' + (fc.model_cycle ? new Date(fc.model_cycle).toLocaleString() : '—');
+}
+
+function renderForecastTable(fc, windPeriods) {
+  const el = document.getElementById('fc-table-out');
+  if (!fc || !fc.forecasts || !fc.forecasts.length) {
+    el.innerHTML = '<span class="err">Forecast data not available. Check that the GitHub Actions pipeline has run successfully and data/forecast.json exists.</span>';
+    return;
+  }
+
+  const pts = fc.forecasts;
+  let html = '<table style="width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px">';
+  html += '<thead><tr style="position:sticky;top:0;z-index:2">';
+  html += '<th style="background:var(--bg-alt);padding:6px 4px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:var(--ink3);border-bottom:1px solid var(--border);font-family:var(--serif);font-weight:400">Time</th>';
+  html += '<th style="background:var(--bg-alt);padding:6px 4px;text-align:right;font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:var(--ink3);border-bottom:1px solid var(--border);font-family:var(--serif);font-weight:400">Height</th>';
+  html += '<th style="background:var(--bg-alt);padding:6px 4px;text-align:right;font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:var(--ink3);border-bottom:1px solid var(--border);font-family:var(--serif);font-weight:400">Period</th>';
+  html += '<th style="background:var(--bg-alt);padding:6px 4px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:var(--ink3);border-bottom:1px solid var(--border);font-family:var(--serif);font-weight:400">Dir</th>';
+  html += '<th style="background:var(--bg-alt);padding:6px 4px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:0.8px;color:var(--ink3);border-bottom:1px solid var(--border);font-family:var(--serif);font-weight:400">Wind</th>';
+  html += '</tr></thead><tbody>';
+
+  let lastDay = '';
+  const sun = calcSun(C.lat, C.lon, new Date());
+
+  pts.forEach((p, idx) => {
+    const d = new Date(p.valid_time);
+    const dayKey = d.toDateString();
+    const hr = d.getHours();
+    const isNight = sun && (hr * 60 + d.getMinutes() < sun.flMin || hr * 60 + d.getMinutes() > sun.llMin);
+    const bg = isNight ? 'rgba(0,0,0,0.025)' : (idx % 2 === 0 ? 'var(--bg-card)' : 'var(--bg-alt)');
+
+    // Day separator
+    if (dayKey !== lastDay) {
+      lastDay = dayKey;
+      html += '<tr><td colspan="5" style="background:var(--bg-alt);padding:6px;font-family:var(--serif);font-weight:700;font-size:11px;color:var(--ink);border-bottom:1px solid var(--border)">' +
+        DAYS[d.getDay()] + ' ' + (d.getMonth()+1) + '/' + d.getDate() + '</td></tr>';
+    }
+
+    const dir = p.direction_deg;
+    const htCol = dirCol(dir);
+
+    // Find closest wind period
+    let windStr = '—';
+    if (windPeriods) {
+      const closest = windPeriods.reduce((best, wp) => {
+        const diff = Math.abs(new Date(wp.startTime).getTime() - d.getTime());
+        return diff < best.diff ? { diff, wp } : best;
+      }, { diff: Infinity, wp: null });
+      if (closest.wp && closest.diff < 2 * 3600000) {
+        const spd = parseInt(closest.wp.windSpeed) || 0;
+        let wCol = 'var(--ink2)';
+        if (spd >= 20) wCol = 'var(--red-m)';
+        else if (spd >= 15) wCol = 'var(--orange)';
+        else if (spd <= 7) wCol = 'var(--green)';
+        windStr = '<span style="color:' + wCol + '">' + closest.wp.windDirection + ' ' + spd + '</span>';
+      }
+    }
+
+    html += '<tr style="background:' + bg + '">';
+    html += '<td style="padding:5px 4px;border-bottom:1px solid #eee">' + fmtT(d) + '</td>';
+    html += '<td style="padding:5px 4px;border-bottom:1px solid #eee;text-align:right;color:' + htCol + '">' + (p.height_ft !== null ? p.height_ft + "'" : '—') + '</td>';
+    html += '<td style="padding:5px 4px;border-bottom:1px solid #eee;text-align:right">' + (p.period_s !== null ? p.period_s + 's' : '—') + '</td>';
+    html += '<td style="padding:5px 4px;border-bottom:1px solid #eee;color:' + htCol + '">' + (dir !== null ? d2c(dir) + ' ' + Math.round(dir) + '°' : '—') + '</td>';
+    html += '<td style="padding:5px 4px;border-bottom:1px solid #eee">' + windStr + '</td>';
+    html += '</tr>';
+  });
+
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+/* ──────────────────────────────
    MAIN INIT
    ────────────────────────────── */
 async function init() {
@@ -1094,7 +1314,16 @@ async function init() {
   // 7. Render wind
   renderWind(wind);
 
-  // 8. Page timestamp
+  // 8. Render forecast (from pipeline data/forecast.json)
+  const fc = await fetchForecast();
+  const allTideHilos = [].concat(
+    (tide1 && tide1.hilos) || [],
+    (tide2 && tide2.hilos) || []
+  );
+  renderTimeline(fc, wind, allTideHilos, sun);
+  renderForecastTable(fc, wind);
+
+  // 9. Page timestamp
   const elapsed = ((Date.now() - t0) / 1000).toFixed(1);
   document.getElementById('pg-ts').textContent = 'All sources loaded in ' + elapsed + 's · ' + new Date().toLocaleTimeString();
 }
