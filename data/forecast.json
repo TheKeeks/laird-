@@ -1,94 +1,46 @@
 {
-  "generated_at": "2026-02-28T09:46:15.295350+00:00",
-  "model_cycle": "2026-02-28T06:00:00+00:00",
+  "generated_at": "2026-02-28T15:42:31.434752+00:00",
+  "model_cycle": "2026-02-28T12:00:00+00:00",
   "grid_point": {
     "lat": 41.002677,
     "lon": -71.599534
   },
   "forecasts": [
     {
-      "valid_time": "2026-02-28T06:00:00+00:00",
-      "forecast_hour": 0,
-      "height_ft": 3.5,
-      "height_m": 1.08,
-      "period_s": 8.1,
-      "direction_deg": 177.0
-    },
-    {
-      "valid_time": "2026-02-28T07:00:00+00:00",
-      "forecast_hour": 1,
-      "height_ft": 3.5,
-      "height_m": 1.07,
-      "period_s": 8.1,
-      "direction_deg": 176.0
-    },
-    {
-      "valid_time": "2026-02-28T08:00:00+00:00",
-      "forecast_hour": 2,
-      "height_ft": 3.5,
-      "height_m": 1.07,
-      "period_s": 8.1,
-      "direction_deg": 175.0
-    },
-    {
-      "valid_time": "2026-02-28T09:00:00+00:00",
-      "forecast_hour": 3,
-      "height_ft": 3.5,
-      "height_m": 1.06,
-      "period_s": 8.1,
-      "direction_deg": 173.0
-    },
-    {
-      "valid_time": "2026-02-28T10:00:00+00:00",
-      "forecast_hour": 4,
-      "height_ft": 3.4,
-      "height_m": 1.05,
-      "period_s": 8.1,
-      "direction_deg": 172.0
-    },
-    {
-      "valid_time": "2026-02-28T11:00:00+00:00",
-      "forecast_hour": 5,
-      "height_ft": 3.4,
-      "height_m": 1.04,
-      "period_s": 8.1,
-      "direction_deg": 171.0
-    },
-    {
       "valid_time": "2026-02-28T12:00:00+00:00",
-      "forecast_hour": 6,
-      "height_ft": 3.4,
-      "height_m": 1.03,
+      "forecast_hour": 0,
+      "height_ft": 3.3,
+      "height_m": 1.01,
       "period_s": 8.0,
       "direction_deg": 170.0
     },
     {
       "valid_time": "2026-02-28T13:00:00+00:00",
-      "forecast_hour": 7,
+      "forecast_hour": 1,
       "height_ft": 3.3,
-      "height_m": 1.02,
+      "height_m": 1.0,
       "period_s": 8.0,
-      "direction_deg": 168.0
+      "direction_deg": 169.0
     },
     {
       "valid_time": "2026-02-28T14:00:00+00:00",
-      "forecast_hour": 8,
-      "height_ft": 3.3,
-      "height_m": 1.0,
+      "forecast_hour": 2,
+      "height_ft": 3.2,
+      "height_m": 0.98,
       "period_s": 7.9,
-      "direction_deg": 167.0
+      "direction_deg": 168.0
     },
     {
       "valid_time": "2026-02-28T15:00:00+00:00",
-      "forecast_hour": 9,
+      "forecast_hour": 3,
       "height_ft": 3.2,
-      "height_m": 0.99,
+      "height_m": 0.97,
       "period_s": 7.8,
       "direction_deg": 167.0
     },
     {
       "valid_time": "2026-02-28T16:00:00+00:00",
-      "forecast_hour": 10,
+      "forecast_hour": 4,
       "height_ft": 3.1,
       "height_m": 0.96,
       "period_s": 7.8,
@@ -96,127 +48,127 @@
     },
     {
       "valid_time": "2026-02-28T17:00:00+00:00",
-      "forecast_hour": 11,
+      "forecast_hour": 5,
       "height_ft": 3.1,
-      "height_m": 0.94,
-      "period_s": 7.7,
+      "height_m": 0.93,
+      "period_s": 7.8,
       "direction_deg": 166.0
     },
     {
       "valid_time": "2026-02-28T18:00:00+00:00",
-      "forecast_hour": 12,
+      "forecast_hour": 6,
       "height_ft": 3.0,
-      "height_m": 0.92,
+      "height_m": 0.91,
       "period_s": 7.7,
       "direction_deg": 166.0
     },
     {
       "valid_time": "2026-02-28T19:00:00+00:00",
-      "forecast_hour": 13,
+      "forecast_hour": 7,
       "height_ft": 2.9,
       "height_m": 0.89,
       "period_s": 7.6,
-      "direction_deg": 163.0
+      "direction_deg": 164.0
     },
     {
       "valid_time": "2026-02-28T20:00:00+00:00",
-      "forecast_hour": 14,
+      "forecast_hour": 8,
       "height_ft": 2.9,
       "height_m": 0.88,
-      "period_s": 7.5,
-      "direction_deg": 163.0
+      "period_s": 7.6,
+      "direction_deg": 164.0
     },
     {
       "valid_time": "2026-02-28T21:00:00+00:00",
-      "forecast_hour": 15,
+      "forecast_hour": 9,
       "height_ft": 2.8,
       "height_m": 0.86,
-      "period_s": 7.4,
-      "direction_deg": 163.0
+      "period_s": 7.5,
+      "direction_deg": 164.0
     },
     {
       "valid_time": "2026-02-28T22:00:00+00:00",
-      "forecast_hour": 16,
+      "forecast_hour": 10,
       "height_ft": 2.8,
-      "height_m": 0.85,
+      "height_m": 0.84,
       "period_s": 7.4,
       "direction_deg": 163.0
     },
     {
       "valid_time": "2026-02-28T23:00:00+00:00",
-      "forecast_hour": 17,
-      "height_ft": 2.8,
-      "height_m": 0.84,
-      "period_s": 7.3,
+      "forecast_hour": 11,
+      "height_ft": 2.7,
+      "height_m": 0.83,
+      "period_s": 7.4,
       "direction_deg": 163.0
     },
     {
       "valid_time": "2026-03-01T00:00:00+00:00",
-      "forecast_hour": 18,
+      "forecast_hour": 12,
       "height_ft": 2.7,
-      "height_m": 0.83,
+      "height_m": 0.81,
       "period_s": 7.3,
-      "direction_deg": 164.0
+      "direction_deg": 162.0
     },
     {
       "valid_time": "2026-03-01T01:00:00+00:00",
-      "forecast_hour": 19,
-      "height_ft": 2.7,
-      "height_m": 0.81,
-      "period_s": 7.2,
-      "direction_deg": 164.0
+      "forecast_hour": 13,
+      "height_ft": 2.6,
+      "height_m": 0.8,
+      "period_s": 7.3,
+      "direction_deg": 162.0
     },
     {
       "valid_time": "2026-03-01T02:00:00+00:00",
-      "forecast_hour": 20,
+      "forecast_hour": 14,
       "height_ft": 2.6,
-      "height_m": 0.8,
+      "height_m": 0.79,
       "period_s": 7.2,
-      "direction_deg": 164.0
+      "direction_deg": 161.0
     },
     {
       "valid_time": "2026-03-01T03:00:00+00:00",
-      "forecast_hour": 21,
+      "forecast_hour": 15,
       "height_ft": 2.6,
-      "height_m": 0.79,
-      "period_s": 7.1,
+      "height_m": 0.78,
+      "period_s": 7.2,
       "direction_deg": 161.0
     },
     {
       "valid_time": "2026-03-01T04:00:00+00:00",
-      "forecast_hour": 22,
-      "height_ft": 2.6,
-      "height_m": 0.78,
-      "period_s": 7.0,
-      "direction_deg": 162.0
-    },
-    {
-      "valid_time": "2026-03-01T05:00:00+00:00",
-      "forecast_hour": 23,
+      "forecast_hour": 16,
       "height_ft": 2.5,
       "height_m": 0.77,
-      "period_s": 6.9,
-      "direction_deg": 161.0
-    },
-    {
-      "valid_time": "2026-03-01T06:00:00+00:00",
-      "forecast_hour": 24,
-      "height_ft": 2.5,
-      "height_m": 0.77,
-      "period_s": 6.9,
-      "direction_deg": 161.0
-    },
-    {
-      "valid_time": "2026-03-01T07:00:00+00:00",
-      "forecast_hour": 25,
-      "height_ft": 2.6,
-      "height_m": 0.79,
-      "period_s": 6.8,
+      "period_s": 7.1,
       "direction_deg": 160.0
     },
     {
+      "valid_time": "2026-03-01T05:00:00+00:00",
+      "forecast_hour": 17,
+      "height_ft": 2.5,
+      "height_m": 0.77,
+      "period_s": 7.0,
+      "direction_deg": 159.0
+    },
+    {
+      "valid_time": "2026-03-01T06:00:00+00:00",
+      "forecast_hour": 18,
+      "height_ft": 2.5,
+      "height_m": 0.77,
+      "period_s": 6.9,
+      "direction_deg": 159.0
+    },
+    {
+      "valid_time": "2026-03-01T07:00:00+00:00",
+      "forecast_hour": 19,
+      "height_ft": 2.6,
+      "height_m": 0.78,
+      "period_s": 6.9,
+      "direction_deg": 159.0
+    },
+    {
       "valid_time": "2026-03-01T08:00:00+00:00",
-      "forecast_hour": 26,
+      "forecast_hour": 20,
       "height_ft": 2.6,
       "height_m": 0.79,
       "period_s": 6.8,
@@ -224,315 +176,227 @@
     },
     {
       "valid_time": "2026-03-01T09:00:00+00:00",
-      "forecast_hour": 27,
+      "forecast_hour": 21,
       "height_ft": 2.6,
-      "height_m": 0.8,
+      "height_m": 0.79,
       "period_s": 6.8,
-      "direction_deg": 156.0
+      "direction_deg": 157.0
     },
     {
       "valid_time": "2026-03-01T10:00:00+00:00",
-      "forecast_hour": 28,
-      "height_ft": 2.7,
-      "height_m": 0.82,
-      "period_s": 6.9,
-      "direction_deg": 153.0
+      "forecast_hour": 22,
+      "height_ft": 2.6,
+      "height_m": 0.8,
+      "period_s": 6.8,
+      "direction_deg": 154.0
     },
     {
       "valid_time": "2026-03-01T11:00:00+00:00",
-      "forecast_hour": 29,
-      "height_ft": 2.7,
-      "height_m": 0.83,
+      "forecast_hour": 23,
+      "height_ft": 2.6,
+      "height_m": 0.8,
       "period_s": 6.9,
-      "direction_deg": 149.0
+      "direction_deg": 151.0
     },
     {
       "valid_time": "2026-03-01T12:00:00+00:00",
-      "forecast_hour": 30,
+      "forecast_hour": 24,
       "height_ft": 2.7,
-      "height_m": 0.83,
+      "height_m": 0.81,
       "period_s": 6.9,
-      "direction_deg": 146.0
+      "direction_deg": 147.0
     },
     {
       "valid_time": "2026-03-01T13:00:00+00:00",
-      "forecast_hour": 31,
+      "forecast_hour": 25,
       "height_ft": 2.7,
-      "height_m": 0.83,
+      "height_m": 0.81,
       "period_s": 6.9,
       "direction_deg": 144.0
     },
     {
       "valid_time": "2026-03-01T14:00:00+00:00",
-      "forecast_hour": 32,
-      "height_ft": 2.8,
-      "height_m": 0.85,
+      "forecast_hour": 26,
+      "height_ft": 2.7,
+      "height_m": 0.83,
       "period_s": 6.9,
-      "direction_deg": 142.0
+      "direction_deg": 141.0
     },
     {
       "valid_time": "2026-03-01T15:00:00+00:00",
-      "forecast_hour": 33,
-      "height_ft": 2.9,
-      "height_m": 0.88,
-      "period_s": 6.8,
-      "direction_deg": 140.0
-    },
-    {
-      "valid_time": "2026-03-01T16:00:00+00:00",
-      "forecast_hour": 34,
-      "height_ft": 3.0,
-      "height_m": 0.92,
+      "forecast_hour": 27,
+      "height_ft": 2.8,
+      "height_m": 0.86,
       "period_s": 6.8,
       "direction_deg": 139.0
     },
     {
-      "valid_time": "2026-03-01T17:00:00+00:00",
-      "forecast_hour": 35,
+      "valid_time": "2026-03-01T16:00:00+00:00",
+      "forecast_hour": 28,
       "height_ft": 3.0,
-      "height_m": 0.9,
-      "period_s": 6.7,
+      "height_m": 0.92,
+      "period_s": 6.8,
       "direction_deg": 137.0
     },
     {
+      "valid_time": "2026-03-01T17:00:00+00:00",
+      "forecast_hour": 29,
+      "height_ft": 3.1,
+      "height_m": 0.93,
+      "period_s": 6.7,
+      "direction_deg": 136.0
+    },
+    {
       "valid_time": "2026-03-01T18:00:00+00:00",
-      "forecast_hour": 36,
+      "forecast_hour": 30,
       "height_ft": 2.8,
       "height_m": 0.86,
       "period_s": 6.6,
-      "direction_deg": 136.0
+      "direction_deg": 135.0
     },
     {
       "valid_time": "2026-03-01T19:00:00+00:00",
-      "forecast_hour": 37,
-      "height_ft": 2.8,
-      "height_m": 0.86,
+      "forecast_hour": 31,
+      "height_ft": 2.7,
+      "height_m": 0.82,
       "period_s": 6.6,
-      "direction_deg": 136.0
+      "direction_deg": 135.0
     },
     {
       "valid_time": "2026-03-01T20:00:00+00:00",
-      "forecast_hour": 38,
-      "height_ft": 2.8,
-      "height_m": 0.85,
+      "forecast_hour": 32,
+      "height_ft": 2.6,
+      "height_m": 0.79,
       "period_s": 6.6,
       "direction_deg": 135.0
     },
     {
       "valid_time": "2026-03-01T21:00:00+00:00",
-      "forecast_hour": 39,
-      "height_ft": 2.9,
-      "height_m": 0.87,
-      "period_s": 6.6,
-      "direction_deg": 135.0
-    },
-    {
-      "valid_time": "2026-03-01T22:00:00+00:00",
-      "forecast_hour": 40,
-      "height_ft": 2.8,
-      "height_m": 0.85,
+      "forecast_hour": 33,
+      "height_ft": 2.5,
+      "height_m": 0.76,
       "period_s": 6.6,
       "direction_deg": 134.0
     },
     {
-      "valid_time": "2026-03-01T23:00:00+00:00",
-      "forecast_hour": 41,
-      "height_ft": 3.1,
-      "height_m": 0.95,
-      "period_s": 6.7,
+      "valid_time": "2026-03-01T22:00:00+00:00",
+      "forecast_hour": 34,
+      "height_ft": 2.5,
+      "height_m": 0.77,
+      "period_s": 6.6,
       "direction_deg": 133.0
+    },
+    {
+      "valid_time": "2026-03-01T23:00:00+00:00",
+      "forecast_hour": 35,
+      "height_ft": 2.6,
+      "height_m": 0.78,
+      "period_s": 6.6,
+      "direction_deg": 132.0
     },
     {
       "valid_time": "2026-03-02T00:00:00+00:00",
-      "forecast_hour": 42,
-      "height_ft": 3.4,
-      "height_m": 1.03,
-      "period_s": 3.8,
-      "direction_deg": 307.0
-    },
-    {
-      "valid_time": "2026-03-02T01:00:00+00:00",
-      "forecast_hour": 43,
-      "height_ft": 3.6,
-      "height_m": 1.09,
-      "period_s": 4.0,
-      "direction_deg": 314.0
-    },
-    {
-      "valid_time": "2026-03-02T02:00:00+00:00",
-      "forecast_hour": 44,
-      "height_ft": 3.6,
-      "height_m": 1.09,
-      "period_s": 4.1,
-      "direction_deg": 322.0
-    },
-    {
-      "valid_time": "2026-03-02T03:00:00+00:00",
-      "forecast_hour": 45,
-      "height_ft": 3.5,
-      "height_m": 1.08,
-      "period_s": 4.2,
-      "direction_deg": 322.0
-    },
-    {
-      "valid_time": "2026-03-02T04:00:00+00:00",
-      "forecast_hour": 46,
-      "height_ft": 3.5,
-      "height_m": 1.06,
-      "period_s": 4.1,
-      "direction_deg": 330.0
-    },
-    {
-      "valid_time": "2026-03-02T05:00:00+00:00",
-      "forecast_hour": 47,
-      "height_ft": 3.4,
-      "height_m": 1.04,
-      "period_s": 4.0,
-      "direction_deg": 332.0
-    },
-    {
-      "valid_time": "2026-03-02T06:00:00+00:00",
-      "forecast_hour": 48,
-      "height_ft": 3.3,
-      "height_m": 1.01,
-      "period_s": 4.0,
-      "direction_deg": 333.0
-    },
-    {
-      "valid_time": "2026-03-02T07:00:00+00:00",
-      "forecast_hour": 49,
-      "height_ft": 3.2,
-      "height_m": 0.97,
-      "period_s": 4.0,
-      "direction_deg": 333.0
-    },
-    {
-      "valid_time": "2026-03-02T08:00:00+00:00",
-      "forecast_hour": 50,
-      "height_ft": 2.9,
-      "height_m": 0.89,
-      "period_s": 7.3,
-      "direction_deg": 122.0
-    },
-    {
-      "valid_time": "2026-03-02T09:00:00+00:00",
-      "forecast_hour": 51,
-      "height_ft": 2.7,
-      "height_m": 0.82,
-      "period_s": 7.3,
-      "direction_deg": 123.0
-    },
-    {
-      "valid_time": "2026-03-02T10:00:00+00:00",
-      "forecast_hour": 52,
-      "height_ft": 2.5,
-      "height_m": 0.77,
-      "period_s": 7.3,
-      "direction_deg": 125.0
-    },
-    {
-      "valid_time": "2026-03-02T11:00:00+00:00",
-      "forecast_hour": 53,
-      "height_ft": 2.4,
-      "height_m": 0.73,
-      "period_s": 7.2,
+      "forecast_hour": 36,
+      "height_ft": 2.6,
+      "height_m": 0.78,
+      "period_s": 6.7,
       "direction_deg": 126.0
     },
     {
-      "valid_time": "2026-03-02T12:00:00+00:00",
-      "forecast_hour": 54,
-      "height_ft": 2.3,
-      "height_m": 0.71,
-      "period_s": 7.2,
-      "direction_deg": 127.0
+      "valid_time": "2026-03-02T01:00:00+00:00",
+      "forecast_hour": 37,
+      "height_ft": 2.8,
+      "height_m": 0.86,
+      "period_s": 6.7,
+      "direction_deg": 125.0
     },
     {
-      "valid_time": "2026-03-02T13:00:00+00:00",
-      "forecast_hour": 55,
-      "height_ft": 2.2,
-      "height_m": 0.68,
+      "valid_time": "2026-03-02T02:00:00+00:00",
+      "forecast_hour": 38,
+      "height_ft": 3.0,
+      "height_m": 0.92,
+      "period_s": 6.8,
+      "direction_deg": 123.0
+    },
+    {
+      "valid_time": "2026-03-02T03:00:00+00:00",
+      "forecast_hour": 39,
+      "height_ft": 3.0,
+      "height_m": 0.92,
+      "period_s": 6.9,
+      "direction_deg": 122.0
+    },
+    {
+      "valid_time": "2026-03-02T04:00:00+00:00",
+      "forecast_hour": 40,
+      "height_ft": 3.1,
+      "height_m": 0.93,
       "period_s": 7.1,
+      "direction_deg": 121.0
+    },
+    {
+      "valid_time": "2026-03-02T05:00:00+00:00",
+      "forecast_hour": 41,
+      "height_ft": 3.0,
+      "height_m": 0.92,
+      "period_s": 7.2,
+      "direction_deg": 121.0
+    },
+    {
+      "valid_time": "2026-03-02T06:00:00+00:00",
+      "forecast_hour": 42,
+      "height_ft": 2.9,
+      "height_m": 0.89,
+      "period_s": 7.2,
+      "direction_deg": 122.0
+    },
+    {
+      "valid_time": "2026-03-02T07:00:00+00:00",
+      "forecast_hour": 43,
+      "height_ft": 2.8,
+      "height_m": 0.85,
+      "period_s": 7.3,
+      "direction_deg": 124.0
+    },
+    {
+      "valid_time": "2026-03-02T08:00:00+00:00",
+      "forecast_hour": 44,
+      "height_ft": 2.7,
+      "height_m": 0.82,
+      "period_s": 7.3,
+      "direction_deg": 126.0
+    },
+    {
+      "valid_time": "2026-03-02T09:00:00+00:00",
+      "forecast_hour": 45,
+      "height_ft": 2.7,
+      "height_m": 0.81,
+      "period_s": 7.3,
       "direction_deg": 128.0
     },
     {
-      "valid_time": "2026-03-02T14:00:00+00:00",
-      "forecast_hour": 56,
-      "height_ft": 2.1,
-      "height_m": 0.65,
-      "period_s": 7.1,
+      "valid_time": "2026-03-02T10:00:00+00:00",
+      "forecast_hour": 46,
+      "height_ft": 2.6,
+      "height_m": 0.8,
+      "period_s": 7.3,
       "direction_deg": 130.0
     },
     {
-      "valid_time": "2026-03-02T15:00:00+00:00",
-      "forecast_hour": 57,
-      "height_ft": 2.0,
-      "height_m": 0.62,
-      "period_s": 7.0,
+      "valid_time": "2026-03-02T11:00:00+00:00",
+      "forecast_hour": 47,
+      "height_ft": 2.6,
+      "height_m": 0.79,
+      "period_s": 7.2,
       "direction_deg": 131.0
     },
     {
-      "valid_time": "2026-03-02T16:00:00+00:00",
-      "forecast_hour": 58,
-      "height_ft": 1.9,
-      "height_m": 0.59,
-      "period_s": 7.0,
-      "direction_deg": 132.0
-    },
-    {
-      "valid_time": "2026-03-02T17:00:00+00:00",
-      "forecast_hour": 59,
-      "height_ft": 1.9,
-      "height_m": 0.57,
-      "period_s": 7.0,
-      "direction_deg": 132.0
-    },
-    {
-      "valid_time": "2026-03-02T18:00:00+00:00",
-      "forecast_hour": 60,
-      "height_ft": 1.8,
-      "height_m": 0.55,
-      "period_s": 6.9,
-      "direction_deg": 132.0
-    },
-    {
-      "valid_time": "2026-03-02T19:00:00+00:00",
-      "forecast_hour": 61,
-      "height_ft": 1.8,
-      "height_m": 0.54,
-      "period_s": 6.9,
-      "direction_deg": 132.0
-    },
-    {
-      "valid_time": "2026-03-02T20:00:00+00:00",
-      "forecast_hour": 62,
-      "height_ft": 1.7,
-      "height_m": 0.53,
-      "period_s": 6.9,
-      "direction_deg": 132.0
-    },
-    {
-      "valid_time": "2026-03-02T21:00:00+00:00",
-      "forecast_hour": 63,
-      "height_ft": 1.7,
-      "height_m": 0.53,
-      "period_s": 7.0,
-      "direction_deg": 133.0
-    },
-    {
-      "valid_time": "2026-03-02T22:00:00+00:00",
-      "forecast_hour": 64,
-      "height_ft": 1.7,
-      "height_m": 0.53,
+      "valid_time": "2026-03-02T13:00:00+00:00",
+      "forecast_hour": 49,
+      "height_ft": 2.5,
+      "height_m": 0.75,
       "period_s": 7.1,
-      "direction_deg": 133.0
-    },
-    {
-      "valid_time": "2026-03-02T23:00:00+00:00",
-      "forecast_hour": 65,
-      "height_ft": 1.7,
-      "height_m": 0.52,
-      "period_s": 9.1,
-      "direction_deg": 131.0
+      "direction_deg": 134.0
     }
   ]
 }
